@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+</head>
+<body>
+
+<button onclick="addTime(1)">1 Minute</button>
+<button onclick="addTime(4)">4 Minuten</button>
+<button onclick="addTime(5)">5 Minuten</button>
+<button onclick="addTime(8)">8 Minuten</button>
+<button onclick="addTime(10)">10 Minuten</button>
+<button onclick="addTime(15)">15 Minuten</button>
+<button onclick="addTime(30)">30 Minuten</button>
+<button onclick="addTime(45)">45 Minuten</button>
+
+<button onclick="startCountdown()">Start Countdown auf 2 Stunden</button>
+<button onclick="stopCountdown()">Stop Countdown</button>
+<button onclick="pauseCountdown()">Pause Countdown</button>
+<button onclick="resumeCountdown()">Resume Countdown</button>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const socket = io();
+
+function addTime(minutes) {
+    socket.emit('addTime', minutes);
+}
+
+function startCountdown() {
+    socket.emit('startCountdown');
+}
+
+function stopCountdown() {
+    socket.emit('stopCountdown');
+}
+
+function pauseCountdown() {
+    socket.emit('pauseCountdown');
+}
+
+function resumeCountdown() {
+    socket.emit('resumeCountdown');
+}
+
+</script>
+
+</body>
+</html>
