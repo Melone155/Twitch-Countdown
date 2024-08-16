@@ -1,4 +1,4 @@
-### Twitch Countdown
+# Twitch Countdown
 
 This is a countdown for Twitch streamers who want to make a stream marathon and need a timer program
 
